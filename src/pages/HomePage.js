@@ -1,35 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios';
+import styled from 'styled-components'
 
-export default class PersonList extends React.Component {
-  state = {
-    data: []
-  }
+import Search from './containers/Search'
+import './Style.css';
 
-  componentDidMount() {
-    axios.get(`https://api.redonemedia.co.uk/_/items/property`)
-      .then(res => {
-        const data = res.data.data;
-        this.setState({ data });
-      })
-  }
+const App = () => (
+  <Div>
+    <p>The Brick Record</p>
+    <Search />
+  </Div>
+)
 
-  render() {
-    return (
-      <div>
-        <div>
-          <p>Welcome to the Brick Record</p>
-          <small>Here are a list of properties you can view details on:</small>
-        </div>
-        <br></br>
-        <ul>
-          { this.state.data.map(person => 
-            <li><Link to={`${person.id}`}>{person.house_number}, {person.street_name}, {person.postcode}</Link></li>
-          )}
-        </ul>
-      </div>
-      
-    )
-  }
-}
+const Div = styled.div`
+  padding: 2rem;
+`
+export default App

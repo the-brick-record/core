@@ -4,7 +4,7 @@
   "description": "An application to show detailed historical property records.",
   "private": false,
   "dependencies": {
-    "auth0-js": "^9.10.2",
+    "auth0-js": "^9.13.2",
     "axios": "^0.18.0",
     "firebase": "^6.0.2",
     "gh-pages": "^2.0.1",
